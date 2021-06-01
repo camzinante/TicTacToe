@@ -23,14 +23,15 @@ public class TicTacToe {
 			Scanner scan = new Scanner(System.in);
 			System.out.println("Player, make your move. Enter a position (1-9):");
 			int playerPos = scan.nextInt();
-			while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos));
+			while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)){
 					System.out.println("Spot taken. Try again.");
 					playerPos = scan.nextInt();
-			}
 			
-		//Not sure why I keep getting this error on line 32 @placePiece. The game was fully functional before I rounded the end of this thing. It looks exactly like the other placePiece but for players! I don't see the problem.
-			placePiece(gameBoard, playerPositions, "player");
-			
+		}	
+		
+		
+		placePiece(gameBoard, playerPos, "player");
+	
 			
 			String result = checkWinner();
 			if(result.length() > 0) {
@@ -53,7 +54,7 @@ public class TicTacToe {
 				System.out.println(result);
 				break;
 			}
-			
+		}	
 	}
 	
 	public static void printGameBoard(char[][] gameBoard) {
